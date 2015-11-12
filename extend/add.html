@@ -1,0 +1,44 @@
+
+<html>
+  <head>
+    <title>添加图书</title>
+</head>
+  <body align="center" background="/picture/02.gif"  >
+    <p><h1>输入内容</h1></p>
+    <a href="/">返回主页</a>
+  </body>
+</html>
+<form method="post">
+<table border=1 align="center"">
+ <tr>
+  <tr><td>ISBN<input name="ISBN" type="text"></td></tr>
+  <tr><td>Title<input name="Title" type="text"></td></tr>
+  <tr><td>AuthorID<select name="AuthorID">
+  {% for author in author_list %}
+  <option value="{{author.AuthorID}}">{{author.Name}}</option>
+  {% endfor %}
+  </td></tr>
+  <tr><td>Publisher<input name="Publisher" type="text"></td></tr>
+  <tr><td>PublishDate<input name="PublishDate" type="text"></td></tr>
+  <tr><td>Price<input name="Price" type="text"></td></tr>
+  <tr><td><input type="submit" value="保存"> <input type="reset" value="重填"></td></tr>
+ </tr>
+</table>
+</form>
+<a href="/add_author/">未找到作者，点此添加</a>
+<table border=1 align="center">
+ <tr>
+  <th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+ </tr>
+{% for Book in book_list %}
+ <tr>
+  <td>{{ Book.ISBN }}</td>
+  <td>{{ Book.Title }}</td>
+  <td>{{ Book.AuthorID }}</td>
+  <td>{{ Book.Publisher}}</td>
+  <td>{{ Book.PublishDate }}</td>
+  <td>{{ Book.Price }}</td>
+ </tr>
+
+{% endfor %}
+</table>

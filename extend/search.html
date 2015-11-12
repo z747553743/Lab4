@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>查询</title>
+</head>
+    <body align="center" background="/picture/02.gif"  ><p> 此作者的书籍 </p></body>
+<form method="post"><table align="center">
+<tr><td>搜索作者<input name="search" type="text" value={{Book.AuthorID}} ><input type="submit" value="确定"></td></tr>
+</form>
+
+<table border=1 align="center" >
+ <tr>
+  <th>ISBN</th><th>Title</th>
+ </tr>
+{% for Book in book_list %}
+ <tr>
+  <td>{{ Book.ISBN }}</td>
+  <td><a href="/information/?ISBN={{Book.ISBN}}">{{ Book.Title }}</a></td>
+  <td><a href="/delete/?ISBN={{Book.ISBN}}">删除</a>
+  <a href="/updata/?ISBN={{Book.ISBN}}">修改</a></td>
+ </tr>
+{% endfor %}
+</table>
+<a href="/">返回主页</a>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>书籍信息</title>
+</head>
+    <body align="center"  background="/picture/02.gif">   <p> 此书籍的信息 </p>   </body> 
+    
+<table border=1 align="center" >
+ <tr>
+  <th>Title</th><th>ISBN</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+ </tr>
+ <tr>
+  <td>{{ book.Title }}</td>
+  <td>{{ book.ISBN }}</td>
+  <td>{{ book.AuthorID }}</td>
+  <td>{{ book.Publisher}}</td>
+  <td>{{ book.PublishDate }}</td>
+  <td>{{ book.Price }}</td>
+ </tr>
+</table>
+<p></p>
+
+<table border=1 align="center">
+ <tr>
+  <th>Name</th><th>AuthorID</th><th>Age</th><th>Country</th>
+ </tr>
+ <tr>
+  <td>{{ author.Name }}</td>
+  <td>{{ author.AuthorID }}</td>
+  <td>{{ author.Age }}</td>
+  <td>{{ author.Country }}</td>
+ </tr>
+
+</table>
+<a href="/">返回首页</a>
+</html>

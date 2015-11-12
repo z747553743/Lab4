@@ -1,0 +1,41 @@
+<html>   
+    <head>    
+        <title>MVC编程与云平台部署</title>   
+    </head>   
+    <body align="center"  background="/picture/02.gif">    欢迎使用MVC编程与云平台部署   </body> 
+    <p align="center">书籍信息</p>
+<table border=1 align="center" >
+ <tr>
+  <th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+ </tr>
+{% for Book in book_list %}
+ <tr>
+  <td>{{ Book.ISBN }}</td>
+  <td>{{ Book.Title }}</td>
+  <td>{{ Book.AuthorID }}</td>
+  <td>{{ Book.Publisher}}</td>
+  <td>{{ Book.PublishDate }}</td>
+  <td>{{ Book.Price }}</td>
+  <td><a href="/delete/?ISBN={{Book.ISBN}}">删除</a>
+  <a href="/updata/?ISBN={{Book.ISBN}}">修改</a></td>
+ </tr>
+{% endfor %}
+</table>
+<p align="center">作者信息</p>
+<table border=1 align="center">
+ <tr>
+  <th>AuthorID</th><th>Name</th><th>Age</th><th>Country</th>
+ </tr>
+{% for Author in author_list %}
+ <tr>
+  <td>{{ Author.AuthorID }}</td>
+  <td>{{ Author.Name }}</td>
+  <td>{{ Author.Age }}</td>
+  <td>{{ Author.Country }}</td>
+ </tr>
+{% endfor %}
+</table>
+<a href="/search/">作者查找</a>
+<a href="/add/">添加书籍</a>
+<a href="/add_author/">作者编辑</a>
+</html> 

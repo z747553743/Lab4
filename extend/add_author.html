@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>添加作者</title>
+</head>
+  <body align="center" background="/picture/02.gif"  >
+    <p><h1>输入内容</h1></p>
+    <a href="/">返回主页</a>
+  </body>
+</html>
+<form method="post">
+<table border=1 align="center">
+ <tr>
+  <tr><td>AuthorID<input name="AuthorID" type="text"></td></tr>
+  <tr><td>Name<input name="Name" type="text"></td></tr>
+  <tr><td>Age<input name="Age" type="text"></td></tr>
+  <tr><td>Country<input name="Country" type="text"></td></tr>
+  <tr><td><input type="submit" value="保存"> <input type="reset" value="重填"></td></tr>
+ </tr>
+</table>
+</form>
+<table border=1 align="center">
+ <tr>
+  <th>AuthorID</th><th>Name</th><th>Age</th><th>Country</th>
+ </tr>
+{% for Author in author_list %}
+ <tr>
+  <td>{{ Author.AuthorID }}</td>
+  <td>{{ Author.Name }}</td>
+  <td>{{ Author.Age }}</td>
+  <td>{{ Author.Country }}</td>
+  <td><a href="/delete_author/?AuthorID={{Author.AuthorID}}">删除</a></td>
+ </tr>
+
+{% endfor %}
+</table>

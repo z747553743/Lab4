@@ -1,0 +1,11 @@
+name: hit1130320119
+version: 1
+
+libraries:
+- name:"django"
+  version:"1.6.11"
+
+
+handlers:
+- url: /static
+  static_path: static
