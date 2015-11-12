@@ -1,6 +1,6 @@
 from django.db import models
 # Create your models here.
-class Author(models.Model):
+class Author1(models.Model):
     AuthorID = models.CharField(max_length=30,primary_key = True)
     Name = models.CharField(max_length=30)
     Age = models.CharField(max_length=10)
